@@ -463,9 +463,12 @@ function renderVisitedLocations() {
           </div>
           <div class="location-name">${name ? escHtml(name) : '<em style="opacity:0.5;">Unnamed</em>'}</div>
           ${keywordCount > 0 ? `<div class="tag-list" style="margin-top:6px;">
-            ${loc.keywords.map(k => `
-              <span class="keyword-tag ${k.unlocked ? 'unlocked' : 'needed'}">${escHtml(k.name)}${k.unlocked ? ' ✓' : ''}</span>
-            `).join('')}
+            ${loc.keywords.map(k => {
+              const playerHasIt = gameState.acquiredKeywords.some(ak => ak.toLowerCase() === k.name.toLowerCase());
+              const cls = k.unlocked ? 'unlocked' : (playerHasIt ? 'has-keyword' : 'needed');
+              const suffix = k.unlocked ? ' ✓' : (playerHasIt ? ' ★' : '');
+              return `<span class="keyword-tag ${cls}">${escHtml(k.name)}${suffix}</span>`;
+            }).join('')}
           </div>` : ''}
           ${isCurrent ? '<div style="font-size:0.7rem; color:var(--sea-green); margin-top:4px; font-family:var(--font-label);">⚓ Current Position</div>' : ''}
         </div>
