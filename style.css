@@ -1085,6 +1085,10 @@ input[type="checkbox"] {
 
 /* Tablet styles */
 @media (min-width: 768px) {
+  html {
+    font-size: 19px;
+  }
+
   #app {
     max-width: 1186px;
   }
@@ -1097,51 +1101,231 @@ input[type="checkbox"] {
     padding: 24px 32px;
   }
 
+  /* Header */
+  .app-header h1 {
+    font-size: 1.6rem;
+  }
+
+  .app-header .subtitle {
+    font-size: 0.8rem;
+  }
+
+  .session-badge {
+    font-size: 0.72rem;
+  }
+
+  /* Nav */
+  .nav-tab {
+    font-size: 0.72rem;
+    padding: 10px 8px 12px;
+  }
+
+  .nav-tab .tab-icon {
+    font-size: 1.3rem;
+  }
+
+  /* Section headers */
+  .section-header {
+    font-size: 1.35rem;
+  }
+
+  .subsection-header {
+    font-size: 1.1rem;
+  }
+
+  /* Form elements */
+  label {
+    font-size: 0.85rem;
+  }
+
+  input[type="text"],
+  input[type="number"],
+  select {
+    font-size: 1rem;
+    padding: 10px 14px;
+  }
+
+  /* Buttons */
+  .btn {
+    font-size: 0.85rem;
+    padding: 12px 22px;
+  }
+
+  .btn-sm {
+    font-size: 0.78rem;
+    padding: 8px 14px;
+  }
+
+  /* Counters */
+  .counter button {
+    width: 38px;
+    height: 38px;
+    font-size: 1.2rem;
+  }
+
+  .counter .counter-val {
+    min-width: 50px;
+    font-size: 1.1rem;
+  }
+
+  /* Cards */
+  .card {
+    padding: 18px 20px;
+  }
+
+  .card-header {
+    font-size: 1.05rem;
+  }
+
+  /* Resources */
   .resource-grid {
     grid-template-columns: repeat(6, 1fr);
   }
 
+  .resource-item label {
+    font-size: 0.72rem;
+  }
+
+  /* Damage */
   .damage-grid {
     gap: 10px;
   }
 
-  .summary-grid {
-    grid-template-columns: repeat(3, 1fr);
+  .damage-section label {
+    font-size: 0.72rem;
   }
 
+  /* Locations */
   .location-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
   }
 
-  .welcome-title {
-    font-size: 2.5rem;
+  .location-number {
+    font-size: 1.1rem;
   }
 
+  .location-name {
+    font-size: 1rem;
+  }
+
+  .location-page {
+    font-size: 0.72rem;
+  }
+
+  /* Keywords & Tags */
+  .keyword-tag {
+    font-size: 0.78rem;
+    padding: 4px 12px;
+  }
+
+  .inline-tags .tag {
+    font-size: 0.88rem;
+    padding: 3px 10px;
+  }
+
+  /* Status tokens */
+  .status-token {
+    font-size: 0.72rem;
+    padding: 5px 12px;
+  }
+
+  /* Character cards */
+  .character-card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 16px;
+  }
+
+  .character-card .char-name {
+    font-size: 1.15rem;
+  }
+
+  .character-card .char-player {
+    font-size: 0.72rem;
+  }
+
+  .char-chip {
+    font-size: 0.82rem;
+    padding: 8px 16px;
+  }
+
+  /* Quests & Totems */
+  .quest-item .name, .totem-item .name {
+    font-size: 1.05rem;
+  }
+
+  .totem-count {
+    font-size: 1.3rem;
+  }
+
+  /* XP display */
+  .xp-value {
+    font-size: 2.3rem;
+  }
+
+  .xp-label {
+    font-size: 0.78rem;
+  }
+
+  /* Summary */
+  .summary-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .summary-stat .stat-label {
+    font-size: 0.68rem;
+  }
+
+  .summary-stat .stat-value {
+    font-size: 1.2rem;
+  }
+
+  /* Inner tabs */
+  .inner-tab {
+    font-size: 0.78rem;
+  }
+
+  /* Finder */
+  .finder-result {
+    font-size: 1rem;
+  }
+
+  /* Welcome */
+  .welcome-title {
+    font-size: 2.8rem;
+  }
+
+  .welcome-sub {
+    font-size: 0.85rem;
+  }
+
+  /* Modal */
   .modal {
-    max-width: 500px;
+    max-width: 540px;
     border-radius: 16px;
     margin-bottom: 20px;
+    padding: 28px 24px 36px;
   }
 
   .modal-overlay {
     align-items: center;
   }
 
-  .nav-tab {
-    font-size: 0.65rem;
-    padding: 10px 8px 12px;
-  }
-
-  .nav-tab .tab-icon {
+  .modal-header h3 {
     font-size: 1.2rem;
   }
 
-  .character-card {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 16px;
+  /* Empty state */
+  .empty-state {
+    font-size: 1rem;
+  }
+
+  /* Toast */
+  .toast {
+    font-size: 0.82rem;
+    padding: 12px 24px;
   }
 }
 
