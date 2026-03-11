@@ -1105,7 +1105,7 @@ input[type="checkbox"] {
   }
 
   .screen {
-    padding: 28px 36px;
+    padding: 10px 36px;
   }
 
   /* Header */
@@ -1177,7 +1177,7 @@ input[type="checkbox"] {
 
   /* Cards */
   .card {
-    padding: 20px 22px;
+    padding: 10px 22px;
     margin-bottom: 16px;
   }
 
@@ -1213,11 +1213,11 @@ input[type="checkbox"] {
   .location-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 12px;
+    gap: 5px;
   }
 
   .location-item {
-    padding: 16px 18px;
+    padding: 0px 18px;
   }
 
   .location-number {
@@ -1291,7 +1291,7 @@ input[type="checkbox"] {
 
   /* XP display */
   .xp-display {
-    padding: 20px;
+    padding: 10px;
     gap: 20px;
   }
 
