@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="64" fill="#1a2744"/>
+  <text x="256" y="300" text-anchor="middle" font-size="280" fill="#c4943a">⚓</text>
+  <text x="256" y="430" text-anchor="middle" font-family="Georgia, serif" font-size="60" fill="#f0e6d3" letter-spacing="8">SG</text>
+</svg>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="theme-color" content="#1a2744" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <title>Sleeping Gods Companion</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="icon.svg" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div id="app">
+  <!-- Header -->
+  <header class="app-header hidden" id="mainHeader">
+    <h1>Sleeping Gods</h1>
+    <div class="subtitle">Ship's Companion</div>
+    <div class="header-ornament">
+      <span class="compass">⚓</span>
+    </div>
+    <span class="session-badge" id="sessionBadge">Session 1</span>
+  </header>
+
+  <!-- ==================== WELCOME SCREEN ==================== -->
+  <div class="screen active" id="screen-welcome">
+    <div class="welcome-content">
+      <div class="welcome-title">Sleeping Gods</div>
+      <div class="welcome-sub">Ship's Companion</div>
+      <div class="welcome-ornament"><span>⚓</span></div>
+      <p style="font-family:var(--font-body); font-style:italic; color:var(--ink-light); max-width:300px; line-height:1.5; margin-bottom:24px;">
+        Captain Odessa, the Manticore awaits your command. Chart your course through uncharted waters.
+      </p>
+      <div class="welcome-buttons">
+        <button class="btn btn-primary btn-block" onclick="startNewGame()">
+          ⛵ New Voyage
+        </button>
+        <button class="btn btn-navy btn-block hidden" id="btnContinue" onclick="continueGame()">
+          📖 Continue Voyage
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== SETUP SCREEN ==================== -->
+  <div class="screen" id="screen-setup">
+    <div class="scroll-content">
+      <div class="section-header"><span class="icon">👥</span> Crew Roster</div>
+      <p style="font-size:0.9rem; color:var(--ink-light); margin-bottom:16px; line-height:1.5;">
+        Enter player names and assign crew members. All 8 characters must be assigned before setting sail.
+      </p>
+
+      <div id="setupPlayers"></div>
+
+      <button class="btn btn-outline btn-block mb-12" onclick="addSetupPlayer()">
+        + Add Player
+      </button>
+
+      <div id="setupStatus" style="text-align:center; font-family:var(--font-label); font-size:0.75rem; margin-bottom:12px;"></div>
+
+      <button class="btn btn-primary btn-block" id="btnStartGame" disabled onclick="startGame()">
+        ⚓ Set Sail
+      </button>
+    </div>
+  </div>
+
+  <!-- ==================== SHIP SCREEN ==================== -->
+  <div class="screen" id="screen-ship">
+    <div class="scroll-content" id="shipContent"></div>
+  </div>
+
+  <!-- ==================== LOCATIONS SCREEN ==================== -->
+  <div class="screen" id="screen-locations">
+    <div class="scroll-content" id="locationsContent"></div>
+  </div>
+
+  <!-- ==================== CREW SCREEN ==================== -->
+  <div class="screen" id="screen-crew">
+    <div class="scroll-content" id="crewContent"></div>
+  </div>
+
+  <!-- ==================== JOURNAL SCREEN ==================== -->
+  <div class="screen" id="screen-journal">
+    <div class="scroll-content" id="journalContent"></div>
+  </div>
+
+  <!-- ==================== SAVE SCREEN ==================== -->
+  <div class="screen" id="screen-save">
+    <div class="scroll-content" id="saveContent"></div>
+  </div>
+
+  <!-- ==================== BOTTOM NAV ==================== -->
+  <nav class="nav-tabs hidden" id="mainNav">
+    <button class="nav-tab active" data-tab="ship">
+      <span class="tab-icon">🚢</span>
+      Ship
+    </button>
+    <button class="nav-tab" data-tab="locations">
+      <span class="tab-icon">🗺️</span>
+      Atlas
+    </button>
+    <button class="nav-tab" data-tab="crew">
+      <span class="tab-icon">👥</span>
+      Crew
+    </button>
+    <button class="nav-tab" data-tab="journal">
+      <span class="tab-icon">📜</span>
+      Journal
+    </button>
+    <button class="nav-tab" data-tab="save">
+      <span class="tab-icon">💾</span>
+      Save
+    </button>
+  </nav>
+
+  <!-- ==================== MODAL ==================== -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="modalContent"></div>
+  </div>
+</div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./sw.js').catch(() => {});
+  }
+</script>
+</body>
+</html>
